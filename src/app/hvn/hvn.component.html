@@ -1,0 +1,5 @@
+<ul>
+  <p [className]="labelClass">{{labelContent}}</p>
+  <button (click)="changeLabelHandler()">Change Label</button>
+  <li *ngFor="let item of users">{{item.name}} -  {{item.age}}</li>
+</ul>
