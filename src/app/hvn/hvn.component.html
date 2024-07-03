@@ -1,5 +1,10 @@
+<p>Parent param : {{parentValue}}</p>
+<p [className]="labelClass" [style]="{width: '200px', height: '200px', border: '1px solid red'}">{{labelContent}}</p>
+<button (click)="changeLabelHandler()">Change Label</button>
+<div *ngIf="labelContent >= 0.5; else noPG13">Value > 0.5</div>
+<ng-template #noPG13>
+  <div>Value < 0.5</div>
+</ng-template>
 <ul>
-  <p [className]="labelClass">{{labelContent}}</p>
-  <button (click)="changeLabelHandler()">Change Label</button>
   <li *ngFor="let item of users">{{item.name}} -  {{item.age}}</li>
 </ul>

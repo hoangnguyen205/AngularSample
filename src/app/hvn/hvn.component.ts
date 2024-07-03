@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { randomInt } from 'crypto';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hvn',
@@ -8,6 +8,8 @@ import { randomInt } from 'crypto';
 })
 export class HvnComponent {
 
+  @Input() parentValue = 0;
+
   users = [
     {name: "a1" , age : 21},
     {name: "a2" , age : 22},
@@ -15,11 +17,11 @@ export class HvnComponent {
   ]
 
   labelClass = 'labelClass';
-  labelContent = 'labelContent';
+  labelContent = 0;
   inputContent = '';
 
   changeLabelHandler() {
-    this.labelContent += Math.random();
+    this.labelContent = Math.random();
   }
 
 }
